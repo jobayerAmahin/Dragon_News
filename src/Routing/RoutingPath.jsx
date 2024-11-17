@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
 import Dashboard from "../Pages/Dashboard";
 import Register from "../Pages/Register";
@@ -14,6 +14,10 @@ const router=createBrowserRouter([
                 path:'/',
                 element:<Home></Home>,
                 children:[
+                    {
+                        path:"/",
+                        element: <Navigate to={'category/01'}></Navigate>
+                    },
                     {
                         path:`/category/:id`,
                         element: <NewsContent></NewsContent>,
