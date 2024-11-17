@@ -1,6 +1,6 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Categories from '../Components/Categories';
 import RightSideContents from '../Components/RightSideContents';
 
@@ -18,7 +18,9 @@ const Home = () => {
             </div>
             <div className='grid grid-cols-12'>
                 <aside className='col-span-3'><Categories></Categories></aside>
-                <div className='col-span-6 border-2 border-gray-600'>Middle</div>
+                <div className='col-span-6 border-2 border-gray-600'>
+                    <Outlet></Outlet>
+                </div>
                 <aside className='col-span-3'><RightSideContents></RightSideContents></aside>
             </div>
         </div>
